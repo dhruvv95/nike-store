@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import CursorFollower from "@/components/CursorFollower";
 import Index from "./pages/Index";
 import Shop from "./pages/Shop";
+import ProductExplorer from "./pages/ProductExplorer";
 import Cart from "./pages/Cart";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -27,6 +28,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/shop" element={<Shop />} />
+            <Route path="/explore" element={<ProductExplorer />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
