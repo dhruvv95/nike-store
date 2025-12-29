@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, Zap, Shield, Trophy, Play, ChevronDown } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import ProductCard from '@/components/ProductCard';
-import { products } from '@/data/products';
-import { TextReveal, FloatingElement, GlowingBorder } from '@/components/AnimatedComponents';
+import { Link } from "react-router-dom";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { ArrowRight, Zap, Shield, Trophy, Play, ChevronDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import ProductCard from "@/components/ProductCard";
+import { products } from "@/data/products";
+import { TextReveal, FloatingElement, GlowingBorder } from "@/components/AnimatedComponents";
 
 const Index = () => {
   const featuredProducts = products.slice(0, 4);
@@ -17,20 +17,20 @@ const Index = () => {
       icon: Zap,
       title: "Lightning Fast",
       description: "Performance-engineered for maximum speed and agility on any surface.",
-      color: "from-primary to-emerald-400"
+      color: "from-primary to-emerald-400",
     },
     {
       icon: Shield,
       title: "Built to Last",
       description: "Premium materials that withstand the toughest training sessions.",
-      color: "from-secondary to-orange-400"
+      color: "from-secondary to-orange-400",
     },
     {
       icon: Trophy,
       title: "Champion's Choice",
       description: "Trusted by professional athletes worldwide for peak performance.",
-      color: "from-primary to-cyan-400"
-    }
+      color: "from-primary to-cyan-400",
+    },
   ];
 
   const stats = [
@@ -43,15 +43,15 @@ const Index = () => {
   return (
     <div className="min-h-screen overflow-hidden">
       {/* Hero Section */}
-      <motion.section 
+      <motion.section
         style={{ opacity: heroOpacity, scale: heroScale }}
         className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
       >
         {/* Animated Background */}
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card" />
-        
+
         {/* Animated Grid */}
-        <motion.div 
+        <motion.div
           className="absolute inset-0"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -61,9 +61,21 @@ const Index = () => {
         </motion.div>
 
         {/* Floating Orbs */}
-        <FloatingElement duration={8} distance={30} className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-primary/5 blur-3xl"><div /></FloatingElement>
-        <FloatingElement duration={10} distance={40} className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-secondary/5 blur-3xl"><div /></FloatingElement>
-        
+        <FloatingElement
+          duration={8}
+          distance={30}
+          className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-primary/5 blur-3xl"
+        >
+          <div />
+        </FloatingElement>
+        <FloatingElement
+          duration={10}
+          distance={40}
+          className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-secondary/5 blur-3xl"
+        >
+          <div />
+        </FloatingElement>
+
         {/* Rotating Ring */}
         <motion.div
           className="absolute top-1/2 left-1/2 w-[600px] h-[600px] -translate-x-1/2 -translate-y-1/2 border border-primary/10 rounded-full"
@@ -91,7 +103,7 @@ const Index = () => {
                     animate={{ scale: [1, 1.3, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   />
-                  New Collection 2024
+                  New Collection 2025
                 </span>
               </GlowingBorder>
             </motion.div>
@@ -103,7 +115,7 @@ const Index = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <motion.span 
+              <motion.span
                 className="block"
                 initial={{ opacity: 0, y: 60 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -111,7 +123,7 @@ const Index = () => {
               >
                 BREAK YOUR
               </motion.span>
-              <motion.span 
+              <motion.span
                 className="block text-gradient-primary"
                 initial={{ opacity: 0, y: 60 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -128,8 +140,8 @@ const Index = () => {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed"
             >
-              Experience the future of athletic performance. Designed for champions, 
-              built to push the boundaries of what's possible.
+              Experience the future of athletic performance. Designed for champions, built to push the boundaries of
+              what's possible.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -180,12 +192,8 @@ const Index = () => {
                   transition={{ delay: 0.9 + index * 0.1 }}
                   className="text-center"
                 >
-                  <p className="text-3xl md:text-4xl font-display font-bold text-gradient-primary mb-1">
-                    {stat.value}
-                  </p>
-                  <p className="text-sm text-muted-foreground uppercase tracking-wider">
-                    {stat.label}
-                  </p>
+                  <p className="text-3xl md:text-4xl font-display font-bold text-gradient-primary mb-1">{stat.value}</p>
+                  <p className="text-sm text-muted-foreground uppercase tracking-wider">{stat.label}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -213,7 +221,7 @@ const Index = () => {
       {/* Features Section */}
       <section className="py-32 bg-card relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(110_100%_61%_/_0.05),transparent_70%)]" />
-        
+
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -231,8 +239,7 @@ const Index = () => {
               Why Choose Us
             </motion.span>
             <h2 className="text-5xl md:text-6xl font-display font-bold mb-6">
-              ENGINEERED FOR{' '}
-              <span className="text-gradient-primary">EXCELLENCE</span>
+              ENGINEERED FOR <span className="text-gradient-primary">EXCELLENCE</span>
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto text-lg">
               Every detail matters when you're chasing greatness.
@@ -250,9 +257,12 @@ const Index = () => {
                 whileHover={{ y: -10, transition: { duration: 0.3 } }}
                 className="group relative"
               >
-                <div className="absolute -inset-1 bg-gradient-to-r opacity-0 group-hover:opacity-100 rounded-3xl blur transition-opacity duration-500" style={{ backgroundImage: `linear-gradient(135deg, var(--primary), var(--secondary))` }} />
+                <div
+                  className="absolute -inset-1 bg-gradient-to-r opacity-0 group-hover:opacity-100 rounded-3xl blur transition-opacity duration-500"
+                  style={{ backgroundImage: `linear-gradient(135deg, var(--primary), var(--secondary))` }}
+                />
                 <div className="relative p-10 rounded-2xl bg-background border border-border group-hover:border-transparent transition-all duration-500">
-                  <motion.div 
+                  <motion.div
                     className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-8`}
                     whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
                     transition={{ duration: 0.5 }}
@@ -298,10 +308,7 @@ const Index = () => {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
                 <Button variant="outline" size="lg" className="group">
                   View All Products
-                  <motion.span
-                    animate={{ x: [0, 5, 0] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                  >
+                  <motion.span animate={{ x: [0, 5, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
                     <ArrowRight className="w-4 h-4" />
                   </motion.span>
                 </Button>
@@ -328,7 +335,7 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] rounded-full border border-primary/10" />
         </motion.div>
-        
+
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -345,8 +352,7 @@ const Index = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                 >
-                  READY TO{' '}
-                  <span className="text-gradient-primary">DOMINATE</span>?
+                  READY TO <span className="text-gradient-primary">DOMINATE</span>?
                 </motion.h2>
                 <motion.p
                   className="text-xl text-muted-foreground mb-12 max-w-xl mx-auto"
@@ -358,11 +364,7 @@ const Index = () => {
                   Join thousands of elite athletes who trust NEXUS for their training and competition needs.
                 </motion.p>
                 <Link to="/shop">
-                  <motion.div 
-                    whileHover={{ scale: 1.05 }} 
-                    whileTap={{ scale: 0.98 }}
-                    className="inline-block"
-                  >
+                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }} className="inline-block">
                     <Button variant="hero" size="xl" className="min-w-[250px]">
                       Start Shopping
                       <ArrowRight className="w-5 h-5" />
