@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { ShoppingBag, Eye, Star } from 'lucide-react';
 import { Product } from '@/context/CartContext';
 import { useCart } from '@/context/CartContext';
@@ -10,6 +11,7 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ product, index }: ProductCardProps) => {
+  const navigate = useNavigate();
   const { addToCart } = useCart();
 
   const handleAddToCart = () => {
@@ -78,6 +80,7 @@ const ProductCard = ({ product, index }: ProductCardProps) => {
               Add to Cart
             </motion.button>
             <motion.button 
+              onClick={() => navigate(`/product/${product.id}`)}
               className="p-3.5 bg-foreground/10 backdrop-blur-md rounded-xl opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-100 hover:bg-foreground/20"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
@@ -123,12 +126,14 @@ const ProductCard = ({ product, index }: ProductCardProps) => {
             <p className="text-2xl font-display font-bold">
               <span className="text-gradient-primary">${product.price}</span>
             </p>
-            <motion.div
+            <motion.button
+              onClick={() => navigate(`/product/${product.id}`)}
               className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300"
-              whileHover={{ rotate: 45 }}
+              whileHover={{ rotate: 45, scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
             >
               <span className="text-lg">→</span>
-            </motion.div>
+            </motion.button>
           </div>
         </div>
       </div>
